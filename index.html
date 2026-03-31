@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Визитка</title>
+    <style>
+        /* Убираем все лишние отступы */
+        * { box-sizing: border-box; }
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: white;
+            overflow: hidden; /* Чтобы не было полос прокрутки */
+        }
+
+        /* Главный контейнер с фоном */
+        .main-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            /* ВАЖНО: Проверьте имя файла ниже! */
+            background: url('визитка69.png') no-repeat center right; 
+            background-size: contain; /* Картинка впишется в экран, не обрезаясь */
+        }
+
+        /* Блок с текстом слева */
+        .content {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40%; /* Занимает 40% ширины экрана слева */
+            height: 100%;
+            background: linear-gradient(to right, rgba(0,0,0,1) 70%, rgba(0,0,0,0)); /* Плавный переход от черного к прозрачному */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 5%;
+            z-index: 2;
+        }
+
+        h1 { font-size: 3rem; margin: 0; color: #fff; }
+        p { font-size: 1.2rem; color: #ccc; margin: 20px 0; }
+
+        .links { display: flex; flex-direction: column; gap: 15px; }
+        
+        .btn {
+            display: inline-block;
+            width: fit-content;
+            padding: 12px 30px;
+            border: 1px solid #555;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Для мобильных телефонов */
+        @media (max-width: 768px) {
+            .main-container { background-position: top center; background-size: 100% auto; }
+            .content { 
+                width: 100%; 
+                height: 60%; 
+                top: auto; 
+                bottom: 0; 
+                background: linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
+                padding: 20px;
+                text-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <div class="content">
+            <h1>AutoCertAktau</h1>
+            <p>Оформление СБКТС <br> и электронные паспорта (ЭПТС)</p>
+            
+            <div class="links">
+                <a href="https://wa.me/77023332801" target="_blank" class="btn">Написать в WhatsApp</a>
+                <a href="https://go.2gis.com/1WArP" target="_blank" class="btn">2Gis</a>
+                <a href="#" class="btn">+7 (702) 333-28-01</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
