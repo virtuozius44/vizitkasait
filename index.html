@@ -68,18 +68,31 @@
 
         /* Для мобильных телефонов */
         @media (max-width: 768px) {
-            .main-container { background-position: top center; background-size: 100% auto; }
-            .content { 
-                width: 100%; 
-                height: 60%; 
-                top: auto; 
-                bottom: 0; 
-                background: linear-gradient(to top, rgba(0,0,0,1) 80%, rgba(0,0,0,0));
-                padding: 20px;
-                text-align: center;
-                align-items: center;
-            }
-        }
+    .main-container { 
+        background-position: center; /* Центрируем машину, чтобы она не убегала вверх */
+        background-size: cover; /* Ключевое изменение: растягиваем картинку на весь блок */
+        background-repeat: no-repeat;
+    }
+
+    .content { 
+        width: 100%; 
+        height: 100%; /* Текст теперь занимает весь экран */
+        top: 0; 
+        bottom: auto; /* Убираем привязку к низу */
+        /* Плавный черный фон поверх картинки, чтобы текст читался (более темный снизу, где кнопки) */
+        background: linear-gradient(to top, rgba(0,0,0,0.9) 20%, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.2) 80%);
+        padding: 20px;
+        text-align: center;
+        align-items: center;
+        justify-content: flex-end; /* Весь текст и кнопки прижимаем к НИЗУ экрана */
+        padding-bottom: 50px; /* Отступ снизу для удобства */
+    }
+
+    h1 { font-size: 2.2rem; margin-top: 0; }
+    p { font-size: 1rem; color: #ccc; margin: 15px 0; }
+    .links { gap: 10px; width: 100%; } /* Убираем gap и растягиваем кнопки */
+    .btn { width: 100%; max-width: 320px; } /* Кнопки теперь на всю ширину (но с ограничением) */
+}
     </style>
 </head>
 <body>
